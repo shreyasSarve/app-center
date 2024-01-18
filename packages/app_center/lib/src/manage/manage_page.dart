@@ -465,6 +465,7 @@ class _ManageSnapTile extends ConsumerWidget {
   ButtonBar buildButtonBarForUpdate(WidgetRef ref, AppLocalizations l10n,
       SnapLauncher snapLauncher, BuildContext context) {
     return ButtonBar(
+      buttonPadding: EdgeInsets.zero,
       mainAxisSize: MainAxisSize.min,
       children: [
         Consumer(
@@ -517,12 +518,16 @@ class _ManageSnapTile extends ConsumerWidget {
                             l10n.snapActionUpdateLabel,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.start,
                           ),
                         ),
                       ],
                     ),
             );
           },
+        ),
+        const SizedBox(
+          width: 8,
         ),
         MenuAnchor(
           menuChildren: [
@@ -563,6 +568,7 @@ class _ManageSnapTile extends ConsumerWidget {
   ButtonBar buildButtonBarForOpen(WidgetRef ref, AppLocalizations l10n,
       SnapLauncher snapLauncher, BuildContext context) {
     return ButtonBar(
+      buttonPadding: EdgeInsets.zero,
       mainAxisSize: MainAxisSize.min,
       children: [
         Visibility(
@@ -574,6 +580,9 @@ class _ManageSnapTile extends ConsumerWidget {
             onPressed: snapLauncher.open,
             child: Text(l10n.snapActionOpenLabel),
           ),
+        ),
+        const SizedBox(
+          width: 8,
         ),
         MenuAnchor(
           menuChildren: [
